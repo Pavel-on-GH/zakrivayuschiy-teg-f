@@ -378,3 +378,23 @@
 .form {
   width: 100%;
 }
+
+@media (width <= 375px) {
+  .card__title {
+    padding: 3px 10px;
+    border-block-end: 2px solid var(--accent-color);
+  }
+
+  .card__image-label {
+    right: 13px;
+  }
+
+  .save-button {
+    flex-direction: column;
+  }
+
+  .save-button svg {
+    width: 28px;
+    height: 28px;
+  }
+}

@@ -1,14 +1,58 @@
-/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
+@keyframes moving-arrow {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: -4px 0;
+  }
+}
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+@keyframes heart-scale {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.5;
+  }
+}
 
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
-*/
+@keyframes sparks {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.like-icon .main-body {
+  transition: fill 0.3s linear;
+}
+
+.like-icon .core {
+  transition: fill 0.3s 0.03s linear;
+}
+
+.like-icon .contour {
+  transition: fill 0.1s linear;
+}
+
+.like-icon.is-liked .core {
+  transition: opacity 0.3s linear, fill 0.3s linear;
+}
+
+.like-icon.is-liked .contour {
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked {
+  transform-origin: center;
+  animation: heart-scale 0.3s alternate ease-in;
+  animation-delay: 0.1s;
+}
+
+.like-icon.is-liked .sparks {
+  transform-origin: center;
+  animation: sparks 0.3s alternate ease-in;
+  animation-delay: 0.3s;
+}

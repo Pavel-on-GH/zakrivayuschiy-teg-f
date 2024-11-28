@@ -130,6 +130,38 @@
   border-block-end: 2px solid var(--accent-color);
 }
 
+.filter-grayscale {
+  filter: grayscale(90%);
+}
+
+.filter-sepia {
+  filter: sepia(80%);
+}
+
+.filter-contrast {
+  filter: contrast(200%);
+}
+
+.filter-blur {
+  filter: blur(2px);
+}
+
+.filter-invert {
+  filter: invert(90%);
+}
+
+.filter-shadow {
+  filter: drop-shadow(3px 3px silver) sepia(100%) drop-shadow(-3px -3px orange);
+}
+
+.filter-brightness {
+  filter: brightness(0.4);
+}
+
+.filter-hue {
+  filter: hue-rotate(90deg);
+}
+
 .card__image-wrapper {
   position: relative;
 }

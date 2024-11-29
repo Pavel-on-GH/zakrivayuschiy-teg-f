@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 51px;
 }
 
 .container {
@@ -174,6 +174,20 @@
   border-block-end: 2px solid var(--accent-color);
 }
 
+.card__image-label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 1;
+  opacity: 0.5;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-transform: uppercase;
+  text-shadow: -1px 0 var(--text-stroke-color), 0 1px var(--text-stroke-color),
+    1px 0 var(--text-stroke-color), 0 -1px var(--text-stroke-color);
+  mix-blend-mode: hard-light;
+}
+
 @supports (
   (text-stroke: 1px var(--text-stroke-color)) or (-webkit-text-stroke: 1px var(--text-stroke-color))
 ) {
@@ -189,21 +203,6 @@
   flex-direction: column;
   gap: 25px;
   padding: 25px;
-  /* border-block-start: 2px solid var(--accent-color); */
-}
-
-.card__image-label {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  z-index: 1;
-  opacity: 0.5;
-  font-family: var(--accent-font);
-  font-size: 14px;
-  text-transform: uppercase;
-  text-shadow: -1px 0 var(--text-stroke-color), 0 1px var(--text-stroke-color),
-    1px 0 var(--text-stroke-color), 0 -1px var(--text-stroke-color);
-  mix-blend-mode: hard-light;
 }
 
 .card__icon-button {
@@ -347,6 +346,7 @@
   align-items: center;
   gap: 30px;
   width: 353px;
+  min-width: 341px;
 }
 
 .save-dialog__text {
@@ -379,10 +379,14 @@
   width: 100%;
 }
 
-@media (width <= 375px) {
+@media (width < 376px) {
   .card__title {
     padding: 3px 10px;
     border-block-end: 2px solid var(--accent-color);
+  }
+
+  .card__image {
+    min-height: 372px;
   }
 
   .card__image-label {
